@@ -2,7 +2,8 @@
 
 Одностраничный разбор спортивных гелей RUNGEL PRO SPORT и программы амбассадоров бренда: что известно о продукте, чего не хватает для оценки, научный контекст, выводы и рекомендации.
 
-Страница: https://roman-purtow.ru/rungel-marketing/
+**Страница:** https://roman-purtow.ru/rungel-marketing/
 
-- Статический сайт без сборки: `index.html`, `assets/styles.css`, `assets/script.js`.
+- Статический сайт без сборки, публикуется через GitHub Pages.
+- `index.html` — контент, `assets/styles.css` — стили (цвета тем заданы через `light-dark()` в `:root`), `assets/script.js` — тема, оглавление, фильтр источников, чек-листы.
 - Данные участников обезличены, страница закрыта от индексации (`noindex`, `robots.txt`).
