@@ -12,7 +12,8 @@
   var REVEAL_SELECTOR = [
     '.part-head', '.gel', '.timeline > li', '.q-card', '.sci', '.knowhow li', '.vs-col', '.verdict',
     '.brief li', '.person', '.quote', '.problem', '.motive', '.flow li', '.case', '.story', '.risk',
-    '.rm-col', '.price-chart', '.callout', '.insights'
+    '.rm-col', '.price-chart', '.callout', '.insights', '.fn-teaser',
+    '.fn-step', '.fn-vid', '.fn-todo li'
   ].join(', ');
 
   var root = document.documentElement;
@@ -56,6 +57,8 @@
   function initToc() {
     var tocLinks = document.querySelectorAll('.toc a');
     var menuBtn = document.querySelector('.menu-toggle');
+    // на странице воронки оглавления нет
+    if (!menuBtn) return function () {};
 
     function setMenu(open) {
       body.classList.toggle('toc-open', open);
@@ -99,6 +102,7 @@
   // ---------- фильтр источников ----------
   function initSourceFilter() {
     var filterBtns = document.querySelectorAll('.filter button');
+    if (!filterBtns.length) return;
     filterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var f = btn.dataset.filter;
