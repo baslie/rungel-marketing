@@ -5,34 +5,37 @@
    ========================================================= */
 
 :root {
-  --paper: #f4efe4;
-  --paper-2: #ebe4d4;
-  --card: #fbf8f1;
-  --ink: #17241f;
-  --ink-2: #44514b;
-  --ink-3: #78827c;
-  --line: #d6cdb9;
-  --line-2: #c2b79f;
+  /* светлое и тёмное значение рядом; тему выбирает color-scheme ниже */
+  --paper: light-dark(#f4efe4, #111a16);
+  --paper-2: light-dark(#ebe4d4, #17221d);
+  --card: light-dark(#fbf8f1, #1a2621);
+  --ink: light-dark(#17241f, #ece6d8);
+  --ink-2: light-dark(#44514b, #bfc3b8);
+  --ink-3: light-dark(#78827c, #8b948d);
+  --line: light-dark(#d6cdb9, #2c3a33);
+  --line-2: light-dark(#c2b79f, #3b4b43);
 
-  --raspberry: #c4234f;
-  --blueberry: #3b3f8f;
+  --raspberry: light-dark(#c4234f, #ec4d78);
+  --blueberry: light-dark(#3b3f8f, #8a8fe6);
   --buckthorn: #e8901a;
-  --cranberry: #9e1b2f;
-  --ginger: #c9a215;
-  --coffee: #6b4a32;
-  --taiga: #2f5a46;
+  --cranberry: light-dark(#9e1b2f, #e0566c);
+  --ginger: light-dark(#c9a215, #e4c445);
+  --coffee: light-dark(#6b4a32, #b88a66);
+  --taiga: light-dark(#2f5a46, #5fae89);
 
-  --known: #17241f;
+  /* уровни доверия */
+  --known: var(--ink);
   --unknown: #8a7f68;
-  --science: #3b3f8f;
-  --analysis: #e8901a;
+  --science: var(--blueberry);
+  --analysis: var(--buckthorn);
 
-  --site: #2f5a46;
-  --team: #c4234f;
-  --ext: #3b3f8f;
+  /* источники */
+  --site: var(--taiga);
+  --team: var(--raspberry);
+  --ext: var(--blueberry);
 
-  --good: #2f5a46;
-  --bad: #c4234f;
+  --good: var(--taiga);
+  --bad: var(--raspberry);
 
   --display: "Unbounded", "Arial Black", sans-serif;
   --body: "Golos Text", "Segoe UI", sans-serif;
@@ -41,59 +44,11 @@
   --radius: 14px;
   --gutter: clamp(16px, 4vw, 48px);
   --topbar-h: 56px;
-  color-scheme: light;
+  color-scheme: light dark;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #111a16;
-    --paper-2: #17221d;
-    --card: #1a2621;
-    --ink: #ece6d8;
-    --ink-2: #bfc3b8;
-    --ink-3: #8b948d;
-    --line: #2c3a33;
-    --line-2: #3b4b43;
-    --known: #ece6d8;
-    --raspberry: #ec4d78;
-    --blueberry: #8a8fe6;
-    --cranberry: #e0566c;
-    --coffee: #b88a66;
-    --taiga: #5fae89;
-    --ginger: #e4c445;
-    --science: #8a8fe6;
-    --site: #5fae89;
-    --team: #ec4d78;
-    --ext: #8a8fe6;
-    --good: #5fae89;
-    --bad: #ec4d78;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #111a16;
-  --paper-2: #17221d;
-  --card: #1a2621;
-  --ink: #ece6d8;
-  --ink-2: #bfc3b8;
-  --ink-3: #8b948d;
-  --line: #2c3a33;
-  --line-2: #3b4b43;
-  --known: #ece6d8;
-  --raspberry: #ec4d78;
-  --blueberry: #8a8fe6;
-  --cranberry: #e0566c;
-  --coffee: #b88a66;
-  --taiga: #5fae89;
-  --ginger: #e4c445;
-  --science: #8a8fe6;
-  --site: #5fae89;
-  --team: #ec4d78;
-  --ext: #8a8fe6;
-  --good: #5fae89;
-  --bad: #ec4d78;
-  color-scheme: dark;
-}
+/* ручной выбор темы (кнопка в шапке) перекрывает системный */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
